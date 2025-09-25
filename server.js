@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import express from 'express';
 import Database from './config/database.js';
+import config from './config/config.js';
 
 const app = new express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -52,6 +52,6 @@ app.post('/delUser', async (req, res) => {
 	}
 });
 
-app.listen(PORT, () => {
-	console.log(`server is running at http://localhost:${PORT}`);
+app.listen(config.port, () => {
+	console.log(`server is running at http://localhost:${config.port}`);
 });

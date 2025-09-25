@@ -1,6 +1,7 @@
 import { MongoClient, ObjectId } from 'mongodb';
+import config from './config.js';
 
-const uri = process.env.MONGODB_URI;
+const uri = config.mongoose.url;
 const client = new MongoClient(uri);
 const dbName = 'cluster0';
 
